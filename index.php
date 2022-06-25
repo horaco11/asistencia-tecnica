@@ -1,3 +1,3 @@
 <?php include 'template/header.php' ?>
 
-<?php include 'template/footer.php.php' ?>
+<?php include 'template/footer.php' ?>
