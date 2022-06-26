@@ -1,7 +1,8 @@
 <footer class="container-fluid bg-dark fixed-bottom">
 <div class="row">
-    <div class="col-md text-light text-center py-3">
-        Desarrollado por Horacio Ansaldi para 2do Parcial de Laboratorio I
+    <div class="col-md text-light py-1 justify-content-around">
+        Desarrollado por Horacio Ansaldi  para IT Help <a style="color:antiquewhite" href="http://www.ithelp.com.ar">http://www.ithelp.com.ar</a>
+        <a style="color:greenyellow;" href="mailto:soporte@ithelp.com.ar">Comunicate via mail haciendo click aquí</a>
     </div>
 </div>
 </footer>
