@@ -29,6 +29,71 @@ $trabajo = $sentencia->fetchAll(PDO::FETCH_OBJ);
             }
             ?>
 
+
+            <?php
+            if (isset($_GET["mensaje"]) and $_GET["mensaje"] == "registrado") {
+            ?>
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <strong>INGRESADA.</strong> Orden de trabajo creada correctamente.
+                </div>
+
+            <?php
+            }
+            ?>
+
+            <?php
+            if (isset($_GET["mensaje"]) and $_GET["mensaje"] == "editado") {
+            ?>
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <strong>MODIFICADA.</strong> Orden de trabajo editada correctamente.
+                </div>
+
+            <?php
+            }
+            ?>
+
+            <?php
+            if (isset($_GET["mensaje"]) and $_GET["mensaje"] == "error") {
+            ?>
+
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <strong>ERROR.</strong> Se ha producido un error, intente nuevamente.
+                </div>
+
+            <?php
+            }
+            ?>
+
+            <?php
+            if (isset($_GET["mensaje"]) and $_GET["mensaje"] == "eliminado") {
+            ?>
+
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <strong>ELIMINADO.</strong> La orden fue dada de baja correctamente.
+                </div>
+
+            <?php
+            }
+            ?>
+
             <!-- fins alertas -->
 
             <div class="card">
@@ -58,8 +123,8 @@ $trabajo = $sentencia->fetchAll(PDO::FETCH_OBJ);
                                     <td><?php echo $dato->telefono ?></td>
                                     <td><?php echo $dato->fechaIngreso ?></td>
                                     <td><?php echo $dato->descProblema ?></td>
-                                    <td>Editar</td>
-                                    <td>Eliminar</td>
+                                    <td><a class="text-success" href="editar.php?id=<?php echo $dato->id ?>"><i class="bi bi-pencil"></i></a></td>
+                                    <td><a class="text-danger" href="eliminar.php?id=<?php echo $dato->id ?>"><i class="bi bi-trash"></i></a></td>
                                 </tr>
 
                             <?php

@@ -1,5 +1,5 @@
 <?php
-print_r($_POST);
+//print_r($_POST);
 if (empty($_POST["oculto"]) || empty($_POST["txtNombreCompleto"]) 
 || empty($_POST["txtTelefono"]) || empty($_POST["dateFechaIngreso"]) 
 || empty($_POST["txtDescripcionProblema"])){
@@ -17,9 +17,10 @@ $sentencia = $bd -> prepare("INSERT INTO trabajos (nombreCompleto, telefono, fec
 $resultado = $sentencia->execute([$nombreCompleto,$telefono,$fechaIngreso,$descripcionProblema,$estado]);
 
 if ($resultado === TRUE) {
-    echo "OK";
+    header('Location: index.php?mensaje=registrado');
 } else {
-    echo "ERROR";
+    header('Location: index.php?mensaje=error');
+    exit();
 }
 
 ?>
